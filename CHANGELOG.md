@@ -14,3 +14,15 @@
 ### Feat
 
 - init
+
+## v1.3.0 (2025-11-16)
+
+### BREAKING CHANGE
+
+- Init frist vertion4
+
+### Feat
+
+- add ci
+- !
+- init

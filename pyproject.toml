@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cz-lazycommit"
-version = "1.2.0"
+version = "1.3.0"
 description = "A Commitizen plugin that integrates with lazycommit CLI tool to generate AI-powered commit messages"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -21,8 +21,8 @@ license-files = []
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-tag_format = "$version"
-version_scheme = "pep440"
+tag_format = "v$version"
+version_scheme = "semver"
 version_provider = "pep621"
 update_changelog_on_bump = true
 major_version_zero = true
