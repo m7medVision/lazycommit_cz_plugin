@@ -15,6 +15,8 @@ A Commitizen plugin that integrates with lazycommit CLI tool to generate AI-powe
 Install the plugin:
 ```bash
 pip install cz-lazycommit
+# or if you using Arch Linux
+ uv tool install commitizen --with cz-lazycommit
 ```
 
 Install lazycommit:
@@ -30,6 +32,20 @@ Stage your changes and commit:
 git add <files>
 cz --name cz_lazycommit commit
 ```
+
+
+### With Lazygit
+
+```
+customCommands:
+  - key: "C"
+    command: "git cz --name cz_lazycommit commit"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true
+```
+
 
 The plugin will:
 - Generate AI-powered commit suggestions using lazycommit
