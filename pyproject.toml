@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cz-lazycommit"
+version = "1.0.0"
+description = "A Commitizen plugin that integrates with lazycommit CLI tool to generate AI-powered commit messages"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+dependencies = ["commitizen", "prompt-toolkit"]
+
+[project.entry-points."commitizen.plugin"]
+cz_lazycommit = "cz_lazycommit:CzLazycommitCz"
+
+[tool.setuptools]
+py-modules = ["cz_lazycommit"]
+include-package-data = true
+license-files = []
+
+[project.urls]
+"Homepage" = "https://github.com/lazycommit/cz-lazycommit"
+"Source" = "https://github.com/lazycommit/cz-lazycommit"
+"Issue Tracker" = "https://github.com/lazycommit/cz-lazycommit/issues"
+"Repository" = "https://github.com/lazycommit/cz-lazycommit"
