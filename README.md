@@ -36,7 +36,7 @@ cz --name cz_lazycommit commit
 
 ### With Lazygit
 
-```
+```yaml
 customCommands:
   - key: "C"
     command: "git cz --name cz_lazycommit commit"
