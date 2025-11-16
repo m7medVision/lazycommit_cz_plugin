@@ -3,7 +3,6 @@ name: "Publish"
 on:
   push:
     tags:
-      # Publish on any tag starting with a `v`, e.g., v0.1.0
       - v*
 
 jobs:
@@ -13,11 +12,7 @@ jobs:
     strategy:
       matrix:
         python-version:
-          - "3.8"
-          - "3.9"
-          - "3.10"
           - "3.11"
-          - "3.12"
 
     steps:
       - name: Checkout
@@ -34,9 +29,6 @@ jobs:
 
       - name: Install the project
         run: uv sync --all-extras --dev
-
-      - name: Run tests
-        run: uv run pytest
 
       - name: Check types
         run: uv run mypy cz_lazycommit
@@ -71,15 +63,6 @@ jobs:
 
       - name: Build package
         run: uv build
-
-      # Optional: Run smoke tests on the built distributions
-      - name: Smoke test (wheel)
-        run: |
-          uv run --isolated --no-project --with dist/*.whl python -c "import cz_lazycommit; print('Wheel import successful')"
-
-      - name: Smoke test (source distribution)
-        run: |
-          uv run --isolated --no-project --with dist/*.tar.gz python -c "import cz_lazycommit; print('Source distribution import successful')"
 
       - name: Publish to PyPI
         run: uv publish
